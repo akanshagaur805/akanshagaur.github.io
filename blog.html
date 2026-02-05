@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Blog | Akansha Gaur</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== THEME COLORS ===== */
+    :root {
+      --primary-color: #9ebdd8;
+      --accent-color: #adb8c1;
+      --text-color: #6aa9b0;
+      --bg-color: #526ab4;
+      --card-bg: rgba(83, 109, 188, 0.7);
+    }
+
+    /* ===== BASE ===== */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      background: var(--bg-color);
+      overflow-x: hidden;
+    }
+
+    /* ===== BACKGROUND IMAGE + OVERLAY ===== */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('train.jpg') no-repeat center center/cover;
+      backdrop-filter: blur(3px);
+      z-index: -1;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      background: rgba(12, 15, 50, 0.7);
+      border-bottom: 2px solid var(--primary-color);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 1.5rem 0 0;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--accent-color);
+      font-weight: 500;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--primary-color);
+    }
+
+    /* ===== BLOG HEADER ===== */
+    .blog-header {
+      text-align: center;
+      margin: 4rem auto 2rem;
+      background: rgba(12, 40, 120, 0.6);
+      padding: 2rem;
+      border-radius: 12px;
+      width: fit-content;
+      box-shadow: 0 6px 20px rgba(12, 159, 145, 0.3);
+    }
+
+    .blog-header h2 {
+      color: var(--primary-color);
+      font-size: 2.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-header p {
+      font-size: 1.1rem;
+      color: var(--text-color);
+    }
+
+    /* ===== BLOG CARDS ===== */
+    .blog-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 3rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .blog-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    .blog-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 35px rgba(12, 159, 145, 0.5);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 2px solid rgba(255,255,255,0.1);
+    }
+
+    .blog-content {
+      padding: 1.5rem;
+    }
+
+    .blog-content h3 {
+      color: var(--primary-color);
+      font-size: 1.4rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .blog-content p {
+      color: #d6dbe8;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .read-more {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .read-more:hover {
+      background: var(--accent-color);
+      transform: scale(1.05);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      border-top: 2px solid var(--primary-color);
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+      .blog-header h2 {
+        font-size: 1.8rem;
+      }
+      .blog-container {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Akansha Gaur</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="blog-header">
+    <h2>My Blog</h2>
+    <p>Insights, learning, and tech updates from my journey.</p>
+  </section>
+
+  <section class="blog-container">
+    <div class="blog-card">
+      <img src="AI.jpg" alt="AI Blog">
+      <div class="blog-content">
+        <h3>Understanding Artificial Intelligence</h3>
+        <p>
+          Explore how AI is reshaping industries, from automation to data insights, and why it’s the future of innovation.
+        </p>
+        <a href="blog_ai.html" class="read-more">Read More</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="webdev.jpg" alt="Web Development">
+      <div class="blog-content">
+        <h3>Modern Web Development</h3>
+        <p>
+          Dive into modern web technologies like React, Node.js, and responsive design principles that shape today’s web.
+        </p>
+        <a href="blog_webdev.html" class="read-more">Read More</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="data.jpg" alt="Data Analytics">
+      <div class="blog-content">
+        <h3>Power of Data Analytics</h3>
+        <p>
+          Learn how data drives smarter decisions and the key tools used for data visualization, analytics, and insights.
+        </p>
+        <a href="blog_data.html" class="read-more">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2025 Akansha Gaur | All Rights Reserved</footer>
+</body>
+</html>

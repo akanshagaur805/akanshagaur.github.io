@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me | Akansha Gaur</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ===== Base Styling (Neon Blue Glow Theme) ===== */
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        color: #e6f1ff;
+        background: url("public/logo23.jpg") no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+      }
+
+      /* ===== BACKGROUND IMAGE + OVERLAY ===== */
+       body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url("bg1.jpg") no-repeat center center/cover;
+      backdrop-filter: blur(3px);
+      z-index: -1;
+    }
+
+      /* ===== Header ===== */
+      header {
+        background: rgba(22, 58, 165, 0.9);
+        padding: 20px 0;
+        text-align: center;
+        
+        
+      }
+
+      header h1 {
+        color: #00bfff;
+        margin-bottom: 5px;
+       /* text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;*/
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav ul li {
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        color: #e6f1ff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #00bfff;
+        
+      }
+
+      /* ===== About Section ===== */
+      .about-container {
+        max-width: 1000px;
+        margin: 100px auto;
+        color: #ffffff;
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #a8d8ff;
+      
+
+        padding: 2.5rem;
+        text-align: center;
+        line-height: 1.8;
+        
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .about-container img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        border: 3px solid #00bfff;
+        object-fit: cover;
+        margin-bottom: 1.5rem;
+        /*box-shadow: 0 0 25px rgba(0, 191, 255, 0.6), 0 0 40px rgba(0, 191, 255, 0.3);*/
+        transition: transform 0.4s ease, box-shadow 0.3s ease;
+        animation: glowPulse 3s infinite alternate;
+      }
+
+      @keyframes glowPulse {
+        from {
+          box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+        }
+        to {
+          box-shadow: 0 0 40px rgba(0, 191, 255, 0.9);
+        }
+      }
+
+      .about-container img:hover {
+        transform: scale(1.05);
+      }
+
+      .about-container h1 {
+        font-size: 2.4rem;
+        color: #00bfff;
+        /*text-shadow: 0 0 12px #00bfff;*/
+      }
+
+      .about-container h3 {
+        font-weight: 400;
+        color: #b0d4ff;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .about-container p {
+        font-size: 1.1rem;
+        max-width: 850px;
+        margin: auto;
+        color: #dcefff;
+      }
+
+      .about-container p b {
+        color: #00bfff;
+      }
+
+      /* ===== Footer ===== */
+      footer {
+        text-align: center;
+        padding: 25px;
+        color: #b8d9ff;
+        background: rgba(10, 20, 50, 0.85);
+        border-top: 2px solid #00bfff;
+        margin-top: 50px;
+       
+      }
+
+      footer:hover {
+        text-shadow: 0 0 8px #00bfff;
+      }
+
+      /* ===== Responsive ===== */
+      @media (max-width: 768px) {
+        .about-container {
+          margin: 60px 20px;
+          padding: 2rem 1rem;
+        }
+        .about-container img {
+          width: 160px;
+          height: 160px;
+        }
+        header h1 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Akansha Gaur</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html" style="color:#00bfff;">About Me</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="about-container">
+      <img src="WIN_20240925_18_35_52_Pro.jpg" alt="Akansha Gaur" />
+      <h1>About Me</h1>
+      <h3>Developer | Data Analyst | Tech Enthusiast</h3>
+      <p>
+        Hello! I'm <b>Akansha Gaur</b> — a passionate technologist with a solid foundation in 
+        <b>Python</b>, <b>SQL</b>, and <b>Web Technologies (HTML, CSS, JavaScript)</b>.
+        My work combines creativity, logic, and data to develop elegant, efficient, and 
+        impactful digital experiences.
+      </p>
+      <br />
+      <p>
+        I’m enthusiastic about exploring the intersection of <b>data analysis</b> and 
+        <b>full-stack development</b>. My goal is to design smart systems that 
+        connect people and technology seamlessly — making digital interactions meaningful.
+      </p>
+    </section>
+
+    <footer>© 2025 Akansha Gaur | All Rights Reserved</footer>
+  </body>
+</html>

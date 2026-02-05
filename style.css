@@ -1,0 +1,153 @@
+/* ====== Root Theme Colors ====== */
+:root {
+  --neon-blue: #00bfff;
+  --text-color: #e0f7ff;
+  --accent-color: #80d4ff;
+  --bg-dark: #050b1e;
+}
+
+/* ====== Global Styles ====== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  background: url("train.jpg") no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Add dark overlay for readability */
+body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('train.jpg') no-repeat center center/cover;
+      backdrop-filter: blur(3px);
+      z-index: -1;
+    }
+/* ====== Header ====== */
+header {
+  background: rgba(10, 20, 40, 0.8);
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 2px solid var(--neon-blue);
+  
+}
+
+header h1 {
+  color: var(--neon-blue);
+  margin-bottom: 5px;
+  font-size: 2.3rem;
+  
+}
+
+header p {
+  font-size: 1rem;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+  margin-top: 0.2rem;
+}
+
+/* ====== Navigation ====== */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 1rem 0 0;
+  gap: 2rem;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* ====== Hero Section ====== */
+.hero {
+  margin-top: 2rem;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-content h2 {
+  color: var(--neon-blue);
+  font-size: 2.2rem;
+  text-shadow: 0 0 12px var(--neon-blue);
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  color: #cfeeff;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ====== Logo/Image ====== */
+.logo {
+  width: 180px;
+  border-radius: 50%;
+  background: rgba(52, 7, 148, 0.6);
+  border: 2px solid var(--neon-blue);
+  padding: 1rem;
+  box-shadow: 0 0 20px var(--neon-blue), 0 0 40px rgba(0, 191, 255, 0.3);
+}
+
+/* ====== Footer ====== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(5, 15, 35, 0.85);
+  color: var(--accent-color);
+  border-top: 2px solid var(--neon-blue);
+  margin-top: 4rem;
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+}
+
+footer:hover {
+  text-shadow: 0 0 8px var(--neon-blue);
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}

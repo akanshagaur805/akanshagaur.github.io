@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Akansha Gaur</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ===== Background Setup ===== */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: #e6f1ff;
+      background: url("profliebg.jpg") no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ===== BACKGROUND IMAGE + OVERLAY ===== */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('train.jpg') no-repeat center center/cover;
+      backdrop-filter: blur(3px);
+      z-index: -1;
+    }
+    /* ===== Header ===== */
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      background: rgba(10, 20, 50, 0.85);
+      border-bottom: 2px solid #00bfff;
+      box-shadow: 0 0 25px rgba(0, 191, 255, 0.4);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #4882ce;
+      letter-spacing: 2px;
+      font-weight: 600;
+     /** text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;*/
+      margin-bottom: 0.3rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #b8d9ff;
+      letter-spacing: 1px;
+    }
+
+    /* ===== Navigation ===== */
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 1.5rem 0;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #e6f1ff;
+      font-weight: 500;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #0040ff;
+      /*text-shadow: 0 0 8px #00bfff;*/
+    }
+
+    /* ===== Projects Section ===== */
+    .projects {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    .projects h2 {
+      color: #2d5ca9;
+      font-size: 2.4rem;
+      margin-bottom: 2.5rem;
+      /*text-shadow: 0 0 15px rgba(0, 191, 255, 0.7);*/
+      letter-spacing: 1px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    /* ===== Project Cards ===== */
+    .card {
+      background: rgba(15, 30, 60, 0.7);
+      border-radius: 15px;
+      border: 1px solid rgba(0, 191, 255, 0.4);
+      box-shadow: 0 0 25px rgba(0, 191, 255, 0.2);
+      overflow: hidden;
+      transition: all 0.4s ease;
+      backdrop-filter: blur(8px);
+      position: relative;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 15px;
+      background: radial-gradient(circle at top left, rgba(0, 191, 255, 0.25), transparent 70%);
+      z-index: 0;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(0, 191, 255, 0.6);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 2px solid rgba(0, 191, 255, 0.5);
+      z-index: 1;
+      position: relative;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-content h3 {
+      color: #00bfff;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+      /*text-shadow: 0 0 10px rgba(0, 191, 255, 0.6);*/
+    }
+
+    .card-content p {
+      color: #dcefff;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .card-content a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #000;
+      background: #00bfff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+     /* box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);*/
+    }
+
+    .card-content a:hover {
+      background: #009fd6;
+      box-shadow: 0 0 25px rgba(0, 191, 255, 0.7);
+      transform: scale(1.05);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #b8d9ff;
+      background: rgba(10, 20, 50, 0.85);
+      border-top: 2px solid #00bfff;
+      margin-top: 60px;
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+    }
+
+    footer:hover {
+      text-shadow: 0 0 10px #00bfff;
+    }
+
+    /* ===== Responsive Design ===== */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .projects {
+        margin: 3rem 1rem;
+      }
+
+      .card img {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>AKANSHA GAUR</h1>
+    <p>PROJECTS & CASE STUDIES</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#projects" class="active">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="projects" id="projects">
+    <h2>My Work</h2>
+    <div class="project-grid">
+
+      <!-- Project 1 -->
+      <div class="card">
+        <img src="face.jpg" alt="Face Recognition System" />
+        <div class="card-content">
+          <h3>🎓 Face Recognition Attendance System</h3>
+          <p>
+            An AI-powered attendance solution using Python, OpenCV, and MySQL for
+            automated student tracking with facial recognition.
+          </p>
+          <a href="project1_face.html">View Project</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="card">
+        <img src="dashboard.jpg" alt="Data Analysis Dashboard" />
+        <div class="card-content">
+          <h3>📊 Data Analysis Dashboard</h3>
+          <p>
+            Interactive analytics dashboard integrating Python, MySQL, and Power BI for data-driven insights.
+          </p>
+          <a href="project2_dashboard.html">View Project</a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="card">
+        <img src="logo.webp" alt="Portfolio Website" />
+        <div class="card-content">
+          <h3>🌐 Personal Portfolio Website</h3>
+          <p>
+            A modern responsive portfolio built with HTML, CSS, JavaScript, and Node.js backend.
+          </p>
+          <a href="project3_portfolio.html">View Project</a>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="card">
+        <img src="chatbot.png" alt="AI Chatbot" />
+        <div class="card-content">
+          <h3>🤖 AI Chatbot</h3>
+          <p>
+            A conversational AI system using NLP and Python to simulate smart, human-like interactions.
+          </p>
+          <a href="project4_chatbot.html">View Project</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>© 2025 Akansha Gaur | All Rights Reserved</footer>
+
+</body>
+</html>

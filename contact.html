@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Akansha Gaur</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== ROOT COLORS ===== */
+    :root {
+      --primary-color: #6c95b9;  /* main highlight color */
+      --accent-color: #7d92a1;   /* secondary highlight */
+      --text-color: #6aa9b0;     /* text color */
+      --bg-light: #0c1f57;       /* page background */
+      --card-bg: rgba(23, 64, 185, 0.7); /* form/card background */
+    }
+
+    /* ===== BODY ===== */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--text-color);
+      background: var(--bg-light);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0b173c;
+      background: url('leave.jpg') no-repeat center center/cover;
+      backdrop-filter: blur(3px);
+      z-index: -1;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      font-weight: 500;
+      color: var(--primary-color);
+    }
+
+    header p {
+      margin-top: 0.3rem;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      color: var(--text-color);
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin-top: 1.5rem;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--accent-color);
+      font-weight: 500;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--primary-color);
+    }
+
+    /* HERO IMAGE */
+   .hero {
+     margin-top: 2rem;
+     background: url('leave.jpg') no-repeat center center/cover;
+     height: 70vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(240, 241, 242, 0.964); /* overlay for readability */
+    }
+
+    .hero-content {
+      position: relative;
+      color: white;
+      z-index: 1;
+    }
+
+    
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    #contact {
+      padding: 4rem 1rem 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+      min-height: 90vh;
+    }
+
+    
+
+    #contact p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 1.8rem;
+      color: var(--text-color);
+    }
+
+    form {
+      background: var(--card-bg);
+      backdrop-filter: blur(8px);
+      padding: 1.8rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(12, 159, 145, 0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 90%;
+      max-width: 550px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    input, textarea {
+      padding: 1rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: rgba(75, 86, 161, 0.15);
+      color: white;
+      outline: none;
+      transition: background 0.3s ease;
+      flex: 1;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #ccc;
+    }
+
+    input:focus, textarea:focus {
+      background: rgba(255, 255, 255, 0.695);
+    }
+
+    button {
+      padding: 1rem;
+      background: var(--primary-color);
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    button:hover {
+      background: var(--accent-color);
+      transform: scale(1.03);
+    }
+
+    #responseMessage {
+      margin-top: 1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .contact-info {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: var(--text-color);
+    }
+
+    .contact-info a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .social-links {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+
+    .social-links a {
+      color: var(--accent-color);
+      transition: color 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      color: var(--primary-color);
+      transform: scale(1.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      border-top: 2px solid var(--primary-color);
+      margin-top: 3rem;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Akansha Gaur</h1>
+    <p>Web Developer & Data Analyst</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ 
+
+  <section id="contact">
+    <h2>Let’s Work Together</h2>
+    <p>Got a project, collaboration idea, or opportunity in mind? I’d love to hear from you. Drop a message below and I’ll get back soon.</p>
+
+    <form id="contactForm">
+      <div class="form-row">
+        <input type="text" id="firstName" placeholder="First Name *" required />
+        <input type="text" id="lastName" placeholder="Last Name *" required />
+      </div>
+      <input type="email" id="email" placeholder="Your Email *" required />
+      <input type="text" id="subject" placeholder="Subject (optional)" />
+      <textarea id="message" rows="5" placeholder="Your Message *" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div id="responseMessage"></div>
+
+    <div class="contact-info">
+      <p>Email: <a href="mailto:gaurakansha7394@gmail.com">gaurakansha7394@gmail.com</a></p>
+      <div class="social-links">
+        <a href="https://github.com/" target="_blank">🐙</a>
+        <a href="https://www.linkedin.com/in/akansha-gaur-24b976244/" target="_blank">💼</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Akansha Gaur | All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const firstName = document.getElementById("firstName").value.trim();
+      const lastName = document.getElementById("lastName").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const responseBox = document.getElementById("responseMessage");
+
+      if (!firstName || !lastName || !email || !message) {
+        responseBox.textContent = "❌ Please fill all required fields!";
+        responseBox.style.color = "red";
+        return;
+      }
+
+      try {
+        const res = await fetch("http://localhost:5000/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: `${firstName} ${lastName}`,
+            email,
+            subject,
+            message
+          }),
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          responseBox.textContent = "✅ Message sent successfully!";
+          responseBox.style.color = "lime";
+          this.reset();
+        } else {
+          responseBox.textContent = "❌ Error sending message!";
+          responseBox.style.color = "red";
+        }
+      } catch (err) {
+        console.error(err);
+        responseBox.textContent = "⚠️ Server error. Please try again later.";
+        responseBox.style.color = "orange";
+      }
+    });
+  </script>
+
+</body>
+</html>
