@@ -301,17 +301,17 @@
       }
 
       try {
-        const res = await fetch("https://portfolio-backend-abc.onrender.com/contact", {
+        const res = await fetch("/contact", {
+         method: "POST",
+         headers: { "Content-Type": "application/json" },
+         body: JSON.stringify({
+         name: `${firstName} ${lastName}`,
+         email,
+         subject,
+         message
+         }),
+         });
 
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: `${firstName} ${lastName}`,
-            email,
-            subject,
-            message
-          }),
-        });
 
         const data = await res.json();
 
@@ -333,4 +333,5 @@
 
 </body>
 </html>
+
 
